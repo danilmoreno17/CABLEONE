@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp. All Rights Reserved. ********** -->
+
+<!-- node - description of the content item -->
+<component name="SinoOverview" extends="LayoutGroup">
+	<interface>
+		<field id="providers" type="array" alias="" />
+		<!-- Alias to Title label -->
+		<field id="Title" type="node" alias="" />
+
+		<!-- Alias to Description label -->
+		<field id="Description" type="node" alias="" />
+
+		<!-- Alias to Value label -->
+		<field id="Value" type="node" alias="" />
+
+		<!-- Alias to Value label -->
+		<field id="Rating" type="node" alias="" />
+
+		<!-- Alias to Value label -->
+		<field id="Categories" type="node" alias="" />
+
+		<!-- Alias to StarRating label -->
+		<field id="StarRating" type="node" alias="" />
+
+		<!-- Alias to UserStarRating label -->
+		<field id="UserStarRating" type="node" alias="" />
+
+		<!-- Alias to ReleaseDate label -->
+		<field id="ReleaseDate" type="node" alias="" />
+
+		<!-- Alias to Actors label -->
+		<field id="Actors" type="node" alias="" />
+
+		<!-- Content node -->
+		<field id="Content" type="node" onChange="OnContentChanged" />
+		<field id="seasonList" type="node" alias="seasonList"  />
+	</interface>
+
+	<!-- main handler -->
+	<script type="text/brightscript" uri="pkg:/components/SinoOverview/SinoOverview.brs" />
+
+	<children>
+
+		<Label id="Title" color="0xFFFFFF" font="font:LargeBoldSystemFont"
+			text="" translation="[800,0]" />
+
+
+		<Group id="grpRating">
+			<Rectangle id="bottomRectangle" translation="[ 0, 0 ]"
+				 width="200" height="34" color="0x19b5feFF" />
+
+
+			<Label id="Rating" color="0xFFFFFF" width="1000" height="34" text="" />
+
+		</Group>
+
+
+		<Label id="Categories" color="0xFFFFFF" width="1000" text="" />
+
+		<Label id="Actors" color="0xFFFFFF" width="1000" />
+
+		<Label id="Description" color="0xFFFFFF" wrap="true" width="1000"
+			height="125" lineSpacing="7" text="Descripcion: " />
+
+								
+					<LoadingIndicator id="loadingIndicator" imageUri="pkg:/images/loader.png"
+						clockwise="true" spinInterval="2" fadeInterval="0.5" spacing="20"
+						imageWidth="100" text="Loading..." width="1280" height="720"
+						translation="[0, 0]" centered="false" textPadding="10"
+						font="font:SmallBoldSystemFont" backgroundColor="0x551A8B"
+						backgroundOpacity="0" visible="false"/>
+	</children>
+
+</component> 

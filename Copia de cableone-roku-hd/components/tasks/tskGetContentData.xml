@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+ 
+<component name = "tskGetContentData" extends = "Task" >
+ 
+  <interface>
+   <field id = "provider" type = "array" />
+   <field id = "device" type = "string" value="" />
+   <field id = "limit" type = "string" />
+   <field id = "offset" type = "string" />
+   <field id = "permission" type = "string" />
+   <field id = "mediaType" type = "string" onChange="setFunctionName" /> 
+   <field id = "result" type = "array"  /> 
+   <field id = "serieid" type = "string"  />     
+   <field id = "seasonid" type = "string"  />   
+   <field id = "domain" type = "string" value="" />
+   <field id = "url" type = "string" value="" />   
+   <field id = "protocol" type = "string" value="https://" />   
+   <field id = "categorylist" type = "array"  />
+     <field id = "categories" type = "array"  />
+	<field id = "permissionfilter" type = "string"  />
+	<field id = "index" type = "int" value="0" />     
+  </interface>
+ 
+  <script type = "text/brightscript" uri="pkg:/components/tasks/tskGetContentData.brs" />
+
+</component>

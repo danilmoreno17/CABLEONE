@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+ 
+<component name = "tskHistory" extends = "Task" >
+ 
+  <interface>
+   <field id = "action" type = "string" onChange="setFunctionName"  />
+   <field id = "accountID" type = "string" value="TQMG"/>
+   <field id = "userID" type = "string" value="44"/>
+   <field id = "macAddr" type = "string" value="44"/>
+   <field id = "url" type = "string" value="http://ssolab1.nagra.com/net/useractivityvault/v1/clientdata/account/"/>    
+   <field id = "index" type = "integer" value="0"/> 
+   <field id = "token" type = "string" />
+      
+        
+  </interface>
+ 
+  <script type = "text/brightscript" uri="pkg:/components/tasks/tskHistory.brs" />
+
+</component>

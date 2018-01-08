@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp. All Rights Reserved. ********** -->
+
+<!-- node that renders details screen handles start of video playback -->
+<component name="sinopsisEP" extends="Group" initialFocus="Buttons">
+
+	<interface>
+		<!-- Button press handler <field id="itemSelected" type="integer" alwaysnotify="true" 
+			alias="Buttons.itemSelected" onChange="onItemSelected" /> -->
+		<!-- Playback flag -->
+		
+		<!-- Content fields -->
+		<field id="content" type="node" alwaysnotify="true" onChange="OnContentChange" />
+
+		<field id="productsContent" type="node" onChange="itemContentChanged" />
+
+	</interface>
+
+	<!-- main handler -->
+	<script type="text/brightscript" uri="pkg:/components/Sinopsis/sinopsisEP.brs" />
+
+
+
+	<children>
+
+		<!-- Dos rows vert: sinopsis, recomendados -->
+		<LayoutGroup layoutDirection="vert" translation="[100,100]">
+			<!--Row Menu -->
+
+			<buttonGroup id="mnutoolbar" layoutDirection="horiz"
+				minWidth="328" itemSpacings="[38, 0]" translation="[0,50]">
+				<Button id="btnOverview" textColor="#DDDDDD" color="" height="55"
+					iconUri="" focusedTextColor="#FFFFFF" textFont="font:MediumSystemFont"
+					focusedTextFont="font:MediumBoldSystemFont" text="Overview" visible="false"/>
+				<Button id="btnWatch" iconUri="" textColor="#DDDDDD"
+					focusedTextColor="#FFFFFF" height="55" textFont="font:MediumSystemFont"
+					focusedTextFont="font:MediumBoldSystemFont" text="Watch" visible="false" />
+
+				<Button id="btnFavorite" iconUri="" textColor="#DDDDDD"
+					focusedTextColor="#FFFFFF" height="55" textFont="font:MediumSystemFont"
+					focusedTextFont="font:MediumBoldSystemFont" text="Add to Favorite"
+					visible="false" />
+
+			</buttonGroup>
+
+
+
+			<!--Row title -->
+
+			<LayoutGroup layoutDirection="horz">
+				<Label id="lblTitle" translation="[50, 50]" horizAlign="left"
+					visible="false" />
+			</LayoutGroup>
+
+
+			<!-- Content grid -->
+			<LayoutGroup layoutDirection="horz">
+
+				<!-- Item poster -->
+
+				<Poster id="Poster" translation="[60, 495]" width="320"
+					height="440" visible="false" />
+
+				<Label id="spaceLabel" width="30" horizAlign="right"
+					vertAlign="center" translation="[0,0]" />
+
+				<Group>
+					<LayoutGroup layoutDirection="vert">
+						<!-- Panel con el overvivew de la sinopsis -->
+						<SinoOverview id="Description" translation="[0, 0]"
+							itemSpacings="[7, 30]" visible="false"/>
+
+					</LayoutGroup>
+					<!-- Panel con el listado de servicios para deeplinking -->
+
+					<MarkupList id="productList" itemComponentName="productListItem"
+						itemSize="[1000, 120]" itemSpacing="[0, 20]" translation="[10,50]" />
+
+
+
+				</Group>
+			</LayoutGroup>
+
+			<PanelSet id="PanelSet" width="1600" height="120" color="0x0000FFFF"
+				translation="[0,0]" />
+
+
+		</LayoutGroup>
+
+
+		
+	</children>
+</component> 

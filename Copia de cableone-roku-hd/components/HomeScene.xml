@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********--> 
+
+<!-- main node which handles home screen children -->
+<component name="HomeScene" extends="Scene" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <interface>
+        <!-- Specifies the content -->
+        <field id="Content" type="node" onChange="OnChangeContent"/>
+        <field id="LabelContent" type="node" onChange="OnChangeLabelContent"/>
+        <field id="OptionsContent" type="node" onChange="OnChangeOptionsContent"/>
+        <field id="Token" type="String" />
+    </interface>
+    
+    <!-- main handler -->
+    <script type="text/brightscript" uri="pkg:/components/HomeScene.brs" />
+    
+    <children>
+    	<Overhang/>
+
+    	
+    	<PanelSet
+    		id="PanelSet"
+    		translation="[0, 207]"/>
+    	<Hud
+    		id="Hud"
+    		height="340"
+    		visible="false"/>
+    	
+    	<Dialog
+            id="Dialog"
+            translation="[0,0]"
+            visible="false"
+            close="true"
+            message="Some option text goes here"
+            title="Options"
+            messageFont="font:MediumSystemFont"/>	
+    				
+    	<Video
+    		id="Video"
+    		width="1920"
+    		height="1080"
+    		visible="false"/>
+    		  <!-- Details screen with Play button -->
+       
+        <!-- Sinopsis page -->
+		 <Sinopsis
+            id="Sinopsis"
+              translation="[50,50]"
+            visible="false"/>
+            
+            <LoadingIndicator
+              id="loadingIndicator"
+              imageUri="pkg:/images/loader.png"
+              clockwise="true"
+              spinInterval="2"
+              fadeInterval="0.5"
+              spacing="20"
+              imageWidth="100"
+              text="Loading..."
+              width="1280"
+              height="720"
+              translation="[250, 250]"
+              centered="true"
+              textPadding="10"
+              font="font:SmallBoldSystemFont"
+              backgroundColor="0x551A8B"
+              backgroundOpacity="0"/>	
+    </children> 
+</component>

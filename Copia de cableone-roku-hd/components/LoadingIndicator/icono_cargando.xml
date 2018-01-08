@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="icono_cargando" extends="Group" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+<children>
+
+					<LoadingIndicator id="loadingIndicator" imageUri="pkg:/images/loader.png"
+						clockwise="true" spinInterval="2" fadeInterval="0.5" spacing="20"
+						imageWidth="100" text="Loading..." width="1280" height="720"
+						translation="[0, 0]" centered="false" textPadding="10"
+						font="font:SmallBoldSystemFont" backgroundColor="0x551A8B"
+						backgroundOpacity="0" />
+</children>
+</component>

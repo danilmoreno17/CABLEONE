@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+ 
+<component name="ProductListItem" extends="Group">
+ 
+<interface> 
+  <field id="itemContent" type="node" onChange="itemContentChanged"/>
+</interface>
+ 
+<script type="text/brightscript" >
+<![CDATA[ 
+  function itemContentChanged() 
+    itemData = m.top.itemContent
+    m.imageProduct.uri = itemData.posterUrl
+    m.titleProduct.text = itemData.labelText
+    m.definitionProduct.text = itemData.strDefinition
+    m.priceProduct.text = itemData.strPrice
+    
+  end function
+  
+  function init() 
+    m.imageProduct = m.top.findNode("imageProduct") 
+    m.titleProduct = m.top.findNode("titleProduct") 
+    m.definitionProduct = m.top.findNode("definitionProduct") 
+    m.priceProduct = m.top.findNode("priceProduct")    
+  end function
+]]>
+</script>
+
+<children> 
+<LayoutGroup layoutDirection="horiz" vertAlignment="center" itemSpacings="20" translation="[0,25]" >
+    <Poster id="imageProduct" translation="[5,3]" width="60" height="40" />
+    <Label id="titleProduct" font="font:MediumSystemFont" color="0xffff00ff" />
+    <Label id="definitionProduct" font="font:SmallSystemFont" color="0xa0cc40ff" />
+    <Label id="priceProduct" font="font:SmallSystemFont" color="0xa0cc40ff" />
+</LayoutGroup>
+
+</children>
+
+</component>

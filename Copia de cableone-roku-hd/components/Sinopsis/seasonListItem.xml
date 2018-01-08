@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+ 
+<component name="seasonListItem" extends="Group">
+ 
+<interface> 
+  <field id="itemContent" type="node" onChange="itemContentChanged"/>
+</interface>
+ 
+<script type="text/brightscript" >
+<![CDATA[ 
+  function itemContentChanged() 
+  
+    itemData = m.top.itemContent
+    m.imgProvider.uri = itemData.posterUrl 
+	m.episodeTitle.text = itemData.labelText
+	'TODO: arreglar en cambio de lenguaje
+	m.episodeNumber.text = "Episode:" + itemData.episodeNumber
+  end function
+  
+  function init() 
+    m.imgProvider = m.top.findNode("imgProvider") 
+    m.episodeTitle = m.top.findNode("lblTitle")
+    m.episodeNumber = m.top.findNode("lblEpisode")
+  end function
+]]>
+</script>
+
+<children> 
+	<LayoutGroup layoutDirection="horiz" itemSpacings="30" height="50"  >
+	    <Poster id="imgProvider" width="240" height="360" visible="false"/>
+	    <LayoutGroup layoutDirection="horiz" width="500">
+	    	<Label  id="lblEpisodeNum" value="Episode:"   color="0xffffffff" />
+	    	<Label  id="lblEpisode"   color="0xffffffff" />
+	    </LayoutGroup>
+		<Label  id="lblTitle"   value="Episode:" color="0xffffffff"/>
+	</LayoutGroup>
+</children>
+
+</component>

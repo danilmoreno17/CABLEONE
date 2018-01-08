@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<component name="DetailsScreenDeepLinking" extends="Group">
+ 
+<interface>
+  <field id="width" type="float" onChange="widthChanged"/>
+  <field id="height" type="float" onChange="heightChanged"/>
+  <field id="itemContent" type="node" onChange="itemContentChanged"/>
+  <field id="focusPercent" type="float" onChange="focusPercentChanged"/>
+  <field id="listHasFocus" type="bool" onChange="focusPercentChanged"/>
+        <!-- Grid Content Node -->
+        <field id="content" type="node"  onChange="onContentChange"/>
+        
+       
+
+        <!-- Interface to focused item (Content Node) -->
+        <field id="focusedContent"  type="node" />
+</interface>
+ 
+<script type="text/brightscript" uri="pkg:/components/DetailsScreenDeepLinking/DetailsScreenDeepLinking.brs" />
+
+ 
+<children>
+ 
+<LayoutGroup layoutDirection="horizontal" vertAlignment="center" itemSpacings="20" translation="[0,34]" >
+  <Poster id="itemImage" />
+  <Label id="itemText" font="theme:MediumSystemFont" />
+   <Label id="itemArtist" font="theme:SmallestSystemFont" />
+
+</LayoutGroup>
+ 
+</children>
+</component>
+

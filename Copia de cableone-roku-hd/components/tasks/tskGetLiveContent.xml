@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+ 
+<component name = "tskGetLiveContent" extends = "Task" >
+ 
+  <interface>
+   <field id = "index" type = "int" value="0" />
+   <field id = "device" type = "string" value="Browse" />
+   <field id = "mediaType" type = "string" onChange="setFunctionName" /> 
+    <field id = "domain" type = "string" value="213.244.195.170" />
+   <field id = "url" type = "string" value="/metadata/delivery/CMS4X/btv/services?" />   
+   <field id = "protocol" type = "string" value="https://" />
+   <field id = "result" type = "array"  />    
+  </interface>
+ 
+  <script type = "text/brightscript" uri="pkg:/components/tasks/tskGetLiveContent.brs" />
+
+</component>

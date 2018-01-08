@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+
+<component name="ContentReader" extends="Task" >
+
+	<interface>
+		 <field id = "uri" type = "uri" />
+	    <field id="content" type="node" />
+	    <field id="contentPoster" type="node" />
+	    <field id="arrItems" type="array" />
+	    <field id="menuOption" type="string" />
+	    <field id="sRef" type="string" />
+	    <field id="sCategory" type="string" />
+	    <field id="strToken" type="string"/>
+	     <field id="requestOption" type="string" />
+	     <field id="remindId" type="string"/>
+	    <field id="Body" type="string" />
+	    <field id="contentId" type="string"/>
+	     <field id="isboolean" type="boolean"/>
+	</interface> 
+
+	<script type="text/brightscript" uri="pkg:/components/DataContent/DataContent.brs"/>
+
+	<script type="text/brightscript">
+	    <![CDATA[function init()
+	        m.top.functionName = "makeMetaData"
+	    end function]]>
+	</script>
+	
+</component>

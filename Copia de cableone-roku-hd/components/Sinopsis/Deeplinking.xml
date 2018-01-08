@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+ 
+<component name = "Deeplinking" extends = "Task" >
+ 
+  <interface>
+   <field id = "urldeeplinking" type = "string" />
+   <field id = "provider" type = "string" />
+   
+   <field id = "channelID" type = "string" />
+   <field id = "contentID" type = "string" />
+   <field id = "mediaType" type = "string" /> 
+     
+    <field id = "index" type = "int" value="0" />
+  </interface>
+ 
+  <script type = "text/brightscript" >
+    <![CDATA[
+ 
+    sub init()
+      m.top.functionName = "openMedia"
+    end sub
+ 
+    sub openMedia()
+ 
+      
+      url = "http://localhost:8060/launch/" + m.top.channelID + "?contentID=" + m.top.contentID + "&mediaType=movie"
+      ?url
+      readInternet = createObject("roUrlTransfer")
+      readInternet.setUrl(url)
+      readInternet.PostFromString("\r\n\r\n")  
+      
+      'TODO arreglar accountID
+      m.simpleTask = CreateObject("roSGNode", "tskHistory")
+      m.simpleTask.accountID = "TQMG"
+      m.simpleTask.action = "add"
+      m.simpleTask.ObserveField("index", historyAdded)
+      m.simpleTask.control = "RUN"
+      
+    end sub
+    sub historyAdded()
+    	m.top.index = 1
+    end sub
+
+    
+
+ 
+    ]]>
+  </script>
+ 
+</component>

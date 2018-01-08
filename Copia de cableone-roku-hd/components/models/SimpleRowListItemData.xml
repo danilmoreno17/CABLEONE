@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+ 
+<component name="SimpleRowListItemData" extends="ContentNode">
+ 
+<interface> 
+  
+  <field id="labelText" type="string" />
+  <field id="posterUrl" type="string" />
+  
+  <field id="strId" type="string" />
+  <field id="strTitle" type="string" />
+  <field id="strDescription" type="string" />
+  <field id="strRating" type="string" />
+  <field id="strCategories" type="string" />
+  <field id="stream" type="string" />
+  <field id="strName" type="string" />
+  <field id="strValue" type="string" />
+  <field id="strActors" type="string" />
+  <field id="strProducto" type="array" />
+  <field id="episodes" type="array"/>
+  <field id ="mediaType" type="string"/>
+  <field id ="episodeNumber" type="string"/>  
+  <!-- si necesitas mas datos PUEDES AGREGAR AQUI -->
+</interface>
+
+</component>

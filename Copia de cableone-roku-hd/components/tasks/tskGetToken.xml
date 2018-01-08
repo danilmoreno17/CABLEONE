@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+ 
+<component name = "tskGetToken" extends = "Task" >
+ 
+  <interface>
+   <field id = "action" type = "string" />
+   <field id = "user" type = "string" />
+   <field id = "password" type = "string" />
+   <field id = "url" type = "string" value="http://ssolab1.nagra.com/net/qsp/gateway/http/js/signonService/signonByUser?"/>    
+   <field id = "index" type = "integer" value="0"/> 
+   <field id = "token" type = "string" />
+      
+  </interface>
+ 
+  <script type = "text/brightscript" uri="pkg:/components/tasks/tskGetToken.brs" />
+
+</component>
