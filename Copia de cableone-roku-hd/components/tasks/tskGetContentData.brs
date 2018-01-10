@@ -1,7 +1,7 @@
 sub init()
         ?"TASK INIT"
          
-        m.top.domain    = "213.244.195.170"
+        m.top.domain    = "157.97.103.217"
         m.top.url       = "/metadata/delivery/CMS4X/vod/ACTION?"
         m.top.device    = Chr(34) + "technical.deviceType" + Chr(34) + ":"  + Chr(34) + "Browser" + Chr(34)  
         ?m.top.device   
