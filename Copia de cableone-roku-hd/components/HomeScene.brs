@@ -74,7 +74,7 @@ end sub
 
 function OnIndexChanged()
 ?"OnIndexChanged"
-stop
+
 if(m.simpleTask.mediaType="movie" or m.simpleTask.mediaType="Movies")  then
     ?"onIndexChanged en movie"
     ?m.simpleTask.result[0]
